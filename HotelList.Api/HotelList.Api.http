@@ -1,6 +1,31 @@
-@HotelList.Api_HostAddress = http://localhost:5190
-
-GET {{HotelList.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+@HotelList_Api_HostAddress = http://localhost:5190
+@id = 1
 
 ###
+GET {{HotelList_Api_HostAddress}}/api/Hotels
+
+###
+POST {{HotelList_Api_HostAddress}}/api/Hotels
+Content-Type: application/json
+
+{
+  "name": "Mountain Lodge",
+  "address": "123 Peak Road",
+  "rating": 4.8
+}
+
+###
+GET {{HotelList_Api_HostAddress}}/api/Hotels/{{id}}
+
+###
+PUT {{HotelList_Api_HostAddress}}/api/Hotels/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Seaside Resort Updated",
+  "address": "1 Ocean View Boulevard",
+  "rating": 4.7
+}
+
+###
+DELETE {{HotelList_Api_HostAddress}}/api/Hotels/{{id}}
